@@ -1,0 +1,4 @@
+import { z } from "zod";
+
+
+export const timeSpanSchema = z.object({"ticks": z.number().optional(),"days": z.number().readonly().optional(),"hours": z.number().readonly().optional(),"milliseconds": z.number().readonly().optional(),"microseconds": z.number().readonly().optional(),"nanoseconds": z.number().readonly().optional(),"minutes": z.number().readonly().optional(),"seconds": z.number().readonly().optional(),"totalDays": z.number().readonly().optional(),"totalHours": z.number().readonly().optional(),"totalMilliseconds": z.number().readonly().optional(),"totalMicroseconds": z.number().readonly().optional(),"totalNanoseconds": z.number().readonly().optional(),"totalMinutes": z.number().readonly().optional(),"totalSeconds": z.number().readonly().optional()});

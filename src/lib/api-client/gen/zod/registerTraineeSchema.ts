@@ -1,0 +1,5 @@
+import { z } from "zod";
+
+import { timeSpanSchema } from "./timeSpanSchema";
+
+export const registerTraineeSchema = z.object({"fullName": z.string().nullish(),"mobile": z.string().nullish(),"email": z.string().nullish(),"typeOfGender": z.string().nullish(),"birthdate": z.string().datetime().nullish(),"preferredDayForTest": z.string().nullish(),"startTimeForTest": z.lazy(() => timeSpanSchema).schema.optional(),"branchId": z.number().nullish(),"attendType": z.string().nullish(),"notes": z.string().nullish(),"education": z.string().nullish(),"job": z.string().nullish(),"preferredSlotId": z.number().nullish(),"secondPreferredSlotId": z.number().nullish(),"countryId": z.number().optional(),"cityId": z.number().nullish(),"followUpUserId": z.string().nullish(),"paymentDate": z.string().datetime().nullish(),"paidValue": z.number().nullish(),"remainingValue": z.number().nullish(),"paidStatus": z.string().nullish(),"paidType": z.string().nullish(),"levelId": z.number().nullish()});

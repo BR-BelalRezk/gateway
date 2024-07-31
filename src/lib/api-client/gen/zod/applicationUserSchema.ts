@@ -1,0 +1,5 @@
+import { z } from "zod";
+
+import { branchSchema } from "./branchSchema";
+
+export const applicationUserSchema = z.object({"id": z.string().nullish(),"userName": z.string().nullish(),"normalizedUserName": z.string().nullish(),"email": z.string().nullish(),"normalizedEmail": z.string().nullish(),"emailConfirmed": z.boolean().optional(),"passwordHash": z.string().nullish(),"securityStamp": z.string().nullish(),"concurrencyStamp": z.string().nullish(),"phoneNumber": z.string().nullish(),"phoneNumberConfirmed": z.boolean().optional(),"twoFactorEnabled": z.boolean().optional(),"lockoutEnd": z.string().datetime().nullish(),"lockoutEnabled": z.boolean().optional(),"accessFailedCount": z.number().optional(),"branchId": z.number().nullish(),"branch": z.lazy(() => branchSchema).schema.optional(),"image": z.string().nullish()});
